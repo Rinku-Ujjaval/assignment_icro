@@ -76,6 +76,7 @@ dependencies {
 
     //dagger
     implementation("com.google.dagger:dagger:2.46.1")
+    testImplementation(libs.androidx.core.testing)
     androidTestImplementation(libs.androidx.core.testing)
     kapt("com.google.dagger:dagger-compiler:2.46.1")
     kapt("com.google.dagger:dagger-android-processor:2.46.1")

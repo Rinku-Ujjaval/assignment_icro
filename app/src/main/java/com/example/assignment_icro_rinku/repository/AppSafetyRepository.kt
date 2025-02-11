@@ -8,9 +8,9 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class AppSafetyRepository @Inject constructor(private val services: Services) {
+open class AppSafetyRepository @Inject constructor(private val services: Services) {
 
-    fun getSafetyData(): Flow<List<Data>> {
+    open fun getSafetyData(): Flow<List<Data>> {
         return flow {
             // get safety data from api calling using flow
             emit(services.appSafety())

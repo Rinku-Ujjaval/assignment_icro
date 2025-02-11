@@ -24,10 +24,8 @@ class AppSafetyViewModel(val appSafetyRepository: AppSafetyRepository) : ViewMod
     fun appSafetyList() {
         viewModelScope.launch(Dispatchers.IO) {
             appSafetyRepository.getSafetyData().catch { e ->
-                Log.d("ERROR", e.toString())
                 _uiState.value = UiState.Error(e.message.toString())
             }.collect {
-                Log.d("SUCCESS", it.toString())
                 _uiState.value = UiState.Success(it)
             }
         }
